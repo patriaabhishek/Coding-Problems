@@ -1,5 +1,6 @@
 def karatsuba(x, y):
     
+    #Handle the integer signs
     sign_x = 1 if x>=0 else -1 
     sign_y = 1 if y>=0 else -1
     prod_sign = sign_x*sign_y
@@ -28,5 +29,6 @@ def karatsuba(x, y):
     ac = karatsuba(a, c)
     bd = karatsuba(b, d)
     apb_cpd = karatsuba(a+b, c+d)
-     
+    
+    #Using integer sign from top
     return(((ac*10**(2*n2)) + ((apb_cpd-ac-bd)*10**(n2)) + bd)*prod_sign)
